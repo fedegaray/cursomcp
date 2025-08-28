@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "mi-primer-servidor": {
+      "command": "python",
+      "args": ["C:/Users/TU_USUARIO/Desktop/mi_primer_servidor_mcp/servidor.py"]
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "C:/Users/TU_USUARIO/Desktop/demo-mcp"]
+    }
+  }
+}
