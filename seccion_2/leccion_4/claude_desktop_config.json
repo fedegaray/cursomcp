@@ -2,7 +2,7 @@
   "mcpServers": {
     "mi-primer-servidor": {
       "command": "python",
-      "args": ["C:/Users/TU_USUARIO/Desktop/mi_primer_servidor_mcp/servidor.py"]
+      "args": ["C:/Users/TU_USUARIO/Desktop/proyectos-mcp/mi_primer_servidor_mcp/servidor.py"]
     }
   }
 }
