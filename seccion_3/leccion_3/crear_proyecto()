@@ -1,0 +1,39 @@
+@mcp.tool()
+def crear_proyecto(nombre: str, descripcion: str, prioridad: int = 3) -> str:
+    """
+    Crea un nuevo proyecto con validación
+   
+    Args:
+        nombre: Nombre del proyecto (mínimo 3 caracteres)
+        descripcion: Descripción del proyecto
+        prioridad: Prioridad del 1-5 (default: 3)
+    """
+    global contador_id
+   
+    # Validación del nombre
+    if not nombre or len(nombre) < 3:
+        return "❌ Error: El nombre debe tener al menos 3 caracteres"
+   
+    # Validación de prioridad
+    if not 1 <= prioridad <= 5:
+        return f"❌ error: Prioridad debe estar entre 1 y 5. Has pasado {prioridad}"
+   
+    # Crear el proyecto
+    contador_id += 1
+    
+    proyecto = {
+        "id": contador_id,
+        "nombre": nombre.strip(),
+        "descripcion": descripcion.strip(),
+        "prioridad": prioridad,
+        "estado": EstadoProyecto.PLANIFICACION.value,
+        "creado": datetime.now().isoformat()
+    }
+   
+    proyectos_db[contador_id] = proyecto
+   
+    return f"""✅ Proyecto creado exitosamente!
+    ID: {contador_id}
+    Nombre: {nombre}
+    Prioridad: {'⭐' * prioridad}
+    Estado: {EstadoProyecto.PLANIFICACION.value}"""
