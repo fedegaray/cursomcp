@@ -1,0 +1,23 @@
+{
+  "mcpServers": {
+    "mi-primer-servidor": {
+      "command": "python",
+      "args": ["C:/Users/Federico/Desktop/proyectos-mcp/mi_primer_servidor_mcp/servidor.py"] 
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+         "-y",
+         "@modelcontextprotocol/server-filesystem",
+         "C:/Users/Federico/Desktop/demo-mcp"]
+    },
+    "asistente-personal":{
+      "command": "python",
+      "args": ["C:/Users/Federico/Desktop/proyectos-mcp/asistente-personal-mcp/asistente.py"]
+    },
+    "gestor-proyectos": {
+      "command": "python",
+      "args": ["C:/Users/Federico/Desktop/proyectos-mcp/gestor-proyectos-mcp/gestor.py"]
+    }
+  }
+}
