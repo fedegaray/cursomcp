@@ -1,6 +1,0 @@
-if __name__ == "__main__":
-    print("Iniciando Gestor de Proyectos MCP...")
-    print("Herramientas disponibles:")
-    print("   - crear_proyecto")
-    print("   - listar_proyectos")
-    mcp.run()
