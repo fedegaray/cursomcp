@@ -1,0 +1,22 @@
+@mcp.tool()
+def estadisticas_github(nombre_repo: str) -> str:
+    """Obtiene estadísticas de un repositorio de GitHub"""
+    
+    if not GITHUB_TOKEN:
+        return "Token de GitHub no configurado"
+    
+    url = f"https://api.github.com/repos/{GITHUB_USER}/{nombre_repo}"
+    headers = {"Authorization": f"token {GITHUB_TOKEN}"}
+    
+    response = requests.get(url, headers=headers)
+    
+    if response.status_code == 200:
+        data = response.json()
+        return f"""📈 ESTADÍSTICAS DE {nombre_repo}:
+        ⭐ Stars: {data.get('stargazers_count', 0)}
+        🔄 Forks: {data.get('forks_count', 0)}
+        📝 Issues: {data.get('open_issues_count', 0)}
+        💻 Lenguaje: {data.get('language', 'No especificado')}
+        📅 Actualizado: {data.get('updated_at', 'Desconocido')[:10]}"""
+    else:
+        return f"❌ No se pudo obtener info del repositorio"
